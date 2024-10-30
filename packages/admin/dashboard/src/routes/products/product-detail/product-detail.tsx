@@ -41,8 +41,6 @@ export const ProductDetail = () => {
       <TwoColumnPageSkeleton
         mainSections={4}
         sidebarSections={3}
-        showJSON
-        showMetadata
       />
     )
   }
@@ -59,8 +57,6 @@ export const ProductDetail = () => {
         sideAfter,
         sideBefore,
       }}
-      showJSON
-      showMetadata
       data={product}
     >
       <TwoColumnPage.Main>
