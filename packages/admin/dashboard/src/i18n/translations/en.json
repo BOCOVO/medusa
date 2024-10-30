@@ -2586,7 +2586,7 @@
     "inventoryItems": "Inventory items",
     "inventoryItem": "Inventory item",
     "requiredQuantity": "Required quantity",
-    "description": "Description",
+    "description": "Description.",
     "email": "Email",
     "password": "Password",
     "repeatPassword": "Repeat Password",
