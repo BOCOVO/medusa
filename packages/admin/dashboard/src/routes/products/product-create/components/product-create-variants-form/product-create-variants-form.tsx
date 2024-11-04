@@ -70,7 +70,7 @@ export const ProductCreateVariantsForm = ({
   }, [variants])
 
   return (
-    <div className="flex size-full flex-col divide-y overflow-hidden">
+    <div className="flex flex-col overflow-hidden divide-y size-full">
       <DataGrid
         columns={columns}
         data={variantData}
@@ -104,7 +104,7 @@ const useColumns = ({
       columnHelper.column({
         id: "options",
         header: () => (
-          <div className="flex size-full items-center overflow-hidden">
+          <div className="flex items-center overflow-hidden size-full">
             <span className="truncate">
               {options.map((o) => o.title).join(" / ")}
             </span>
@@ -133,17 +133,6 @@ const useColumns = ({
         },
       }),
       columnHelper.column({
-        id: "sku",
-        name: t("fields.sku"),
-        header: t("fields.sku"),
-        field: (context) =>
-          `variants.${context.row.original.originalIndex}.sku`,
-        type: "text",
-        cell: (context) => {
-          return <DataGrid.TextCell context={context} />
-        },
-      }),
-      columnHelper.column({
         id: "manage_inventory",
         name: t("fields.managedInventory"),
         header: t("fields.managedInventory"),
@@ -151,35 +140,7 @@ const useColumns = ({
           `variants.${context.row.original.originalIndex}.manage_inventory`,
         type: "boolean",
         cell: (context) => {
-          return <DataGrid.BooleanCell context={context} />
-        },
-      }),
-      columnHelper.column({
-        id: "allow_backorder",
-        name: t("fields.allowBackorder"),
-        header: t("fields.allowBackorder"),
-        field: (context) =>
-          `variants.${context.row.original.originalIndex}.allow_backorder`,
-        type: "boolean",
-        cell: (context) => {
-          return <DataGrid.BooleanCell context={context} />
-        },
-      }),
-
-      columnHelper.column({
-        id: "inventory_kit",
-        name: t("fields.inventoryKit"),
-        header: t("fields.inventoryKit"),
-        field: (context) =>
-          `variants.${context.row.original.originalIndex}.inventory_kit`,
-        type: "boolean",
-        cell: (context) => {
-          return (
-            <DataGrid.BooleanCell
-              context={context}
-              disabled={!context.row.original.manage_inventory}
-            />
-          )
+          return <DataGrid.BooleanCell disabled context={context} />
         },
       }),
 
