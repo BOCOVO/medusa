@@ -36,13 +36,15 @@ export const ProductDetail = () => {
   const sideAfter = getWidgets("product.details.side.after")
   const sideBefore = getWidgets("product.details.side.before")
 
+  const isDevEnv = import.meta.env.DEV
+
   if (isLoading || !product) {
     return (
       <TwoColumnPageSkeleton
         mainSections={4}
         sidebarSections={3}
-        showJSON
-        showMetadata
+        showJSON={isDevEnv}
+        showMetadata={isDevEnv}
       />
     )
   }
@@ -59,8 +61,8 @@ export const ProductDetail = () => {
         sideAfter,
         sideBefore,
       }}
-      showJSON
-      showMetadata
+      showJSON={isDevEnv}
+      showMetadata={isDevEnv}
       data={product}
     >
       <TwoColumnPage.Main>
