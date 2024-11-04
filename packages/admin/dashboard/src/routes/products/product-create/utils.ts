@@ -103,7 +103,7 @@ export const decorateVariantsWithDefaultValues = (
     ...variant,
     title: variant.title || "",
     sku: variant.sku || "",
-    manage_inventory: variant.manage_inventory || false,
+    manage_inventory: variant.manage_inventory || true,
     allow_backorder: variant.allow_backorder || false,
     inventory_kit: variant.inventory_kit || false,
   }))
