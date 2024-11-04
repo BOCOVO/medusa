@@ -18,7 +18,7 @@ export const ProductOrganizationSection = ({
   const { getDisplays } = useDashboardExtension()
 
   return (
-    <Container className="divide-y p-0">
+    <Container className="p-0 divide-y">
       <div className="flex items-center justify-between px-6 py-4">
         <Heading level="h2">{t("products.organization.header")}</Heading>
         <ActionMenu
@@ -46,31 +46,6 @@ export const ProductOrganizationSection = ({
                 </Badge>
               ))
             : undefined
-        }
-      />
-      <SectionRow
-        title={t("fields.type")}
-        value={
-          product.type ? (
-            <Badge size="2xsmall" className="w-fit" asChild>
-              <Link to={`/products?type_id=${product.type_id}`}>
-                {product.type.value}
-              </Link>
-            </Badge>
-          ) : undefined
-        }
-      />
-
-      <SectionRow
-        title={t("fields.collection")}
-        value={
-          product.collection ? (
-            <Badge size="2xsmall" className="w-fit" asChild>
-              <Link to={`/collections/${product.collection.id}`}>
-                {product.collection.title}
-              </Link>
-            </Badge>
-          ) : undefined
         }
       />
 

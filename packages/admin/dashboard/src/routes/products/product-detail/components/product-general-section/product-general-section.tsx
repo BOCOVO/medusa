@@ -62,7 +62,7 @@ export const ProductGeneralSection = ({
   }
 
   return (
-    <Container className="divide-y p-0">
+    <Container className="p-0 divide-y">
       <div className="flex items-center justify-between px-6 py-4">
         <Heading>{product.title}</Heading>
         <div className="flex items-center gap-x-4">
@@ -95,12 +95,6 @@ export const ProductGeneralSection = ({
       </div>
 
       <SectionRow title={t("fields.description")} value={product.description} />
-      <SectionRow title={t("fields.subtitle")} value={product.subtitle} />
-      <SectionRow title={t("fields.handle")} value={`/${product.handle}`} />
-      <SectionRow
-        title={t("fields.discountable")}
-        value={product.discountable ? t("fields.true") : t("fields.false")}
-      />
       {displays.map((Component, index) => {
         return <Component key={index} data={product} />
       })}

@@ -157,26 +157,6 @@ export const useProductVariantTableColumns = (
           </div>
         ),
       }),
-      columnHelper.accessor("sku", {
-        header: () => (
-          <div className="flex h-full w-full items-center">
-            <span className="truncate">{t("fields.sku")}</span>
-          </div>
-        ),
-        cell: ({ getValue }) => {
-          const value = getValue()
-
-          if (!value) {
-            return <PlaceholderCell />
-          }
-
-          return (
-            <div className="flex h-full w-full items-center overflow-hidden">
-              <span className="truncate">{value}</span>
-            </div>
-          )
-        },
-      }),
       ...optionColumns,
       columnHelper.accessor("inventory_items", {
         header: () => (
